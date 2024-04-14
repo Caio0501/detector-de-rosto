@@ -9,7 +9,7 @@ while True:
 
     imagem_cinza = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    deteccoes = detector_face.detectMultiScale(imagem_cinza)
+    deteccoes = detector_face.detectMultiScale(imagem_cinza, scaleFactor=1.1, minSize=(100,100))
 
     for (x, y, w, h) in deteccoes:
         cv2.rectangle(frame, (x,y), (x + w, y + h), (0, 255, 0), 2)
